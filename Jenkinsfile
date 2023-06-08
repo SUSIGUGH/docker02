@@ -1,7 +1,7 @@
 pipeline {
 agent any
 stages {
-stage ("Stage 1") {
+stage ("List Files") {
 steps {
 sh 'pwd'
 sh 'ls -ltr'
