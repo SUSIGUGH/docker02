@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodejs
+  labels:
+    app: nodejs
+spec:
+  containers:
+    - name: nodejs01
+      image: susigugh/nodejs:1.0
