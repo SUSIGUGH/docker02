@@ -23,6 +23,13 @@ sh 'ls -ltr'
     }
   }
   
+    stage ("Deployment to Kubernetes") {
+    steps {
+      sh 'sudo docker image tag nodejs susigugh/nodejs:1.0'
+      sh 'sudo docker push susigugh/nodejs:1.0'
+    }
+  }
+  
  
 }
 }
