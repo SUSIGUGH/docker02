@@ -25,9 +25,9 @@ sh 'ls -ltr'
   
     stage ("Deployment to Kubernetes") {
     steps {
-      sh 'cp susiminikube.pem .'
+      #sh 'cp susiminikube.pem .'
       sh 'chmod 400 susiminikube.pem'
-      sh 'ssh -i ~/susiminikube.pem ec2-user@15.207.110.156 "kubectl run susinodejs --image=susigugh/nodejs:1.0"'
+      sh 'ssh -i susiminikube.pem ec2-user@15.207.110.156 "kubectl run susinodejs --image=susigugh/nodejs:1.0"'
     }
   }
   
