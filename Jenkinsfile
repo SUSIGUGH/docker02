@@ -26,8 +26,8 @@ sh 'ls -ltr'
     stage ("Deployment to Kubernetes") {
     steps {
       sh 'chmod 400 susiminikube.pem'
-      sh 'ssh -i susiminikube.pem ec2-user@15.207.110.156 "kubectl delete pod susihttpd01"'
-      sh 'ssh -i susiminikube.pem ec2-user@15.207.110.156 "kubectl run susihttpd01 --image=susigugh/httpdimg:v1.1"'
+      sh 'ssh -i susiminikube.pem ec2-user@43.204.109.189 "kubectl delete -f rep01.yml"'
+      sh 'ssh -i susiminikube.pem ec2-user@43.204.109.189 "kubectl create -f rep01.yml"'
     }
   }
   
