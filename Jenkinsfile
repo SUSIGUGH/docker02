@@ -26,7 +26,7 @@ sh 'ls -ltr'
     stage ("Deployment to Kubernetes") {
     steps {
       sh 'chmod 400 susiminikube.pem'
-     
+      sh 'ls -ltr'
       sh 'ssh -i susiminikube.pem ec2-user@43.204.109.189 "kubectl create -f rep01.yml"'
     }
   }
