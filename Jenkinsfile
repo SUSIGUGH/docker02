@@ -9,6 +9,7 @@ sh 'ls -ltr'
 sh 'terraform init'
 sh 'terraform plan'
 sh 'terraform apply -auto-approve'
+sh 'echo "Completed"'
   }
 }
  
