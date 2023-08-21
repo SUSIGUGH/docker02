@@ -1,0 +1,17 @@
+name: Mirror Sync
+
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  mirror-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Perform mirror sync
+        uses: ActionsDesk/mirror-sync@main
+        with:
+          remote-repository-url: https://${{ secrets.REMOTE_AUTHENTICATION_TOKEN }}@example.com/remote-repository.git
