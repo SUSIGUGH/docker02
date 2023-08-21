@@ -37,6 +37,6 @@ jobs:
           git config --global user.email "susigugh@gmail.com"
           git config --global user.name "susigugh"
           git remote add remote https://susigugh01+1-at-016589193088:XcNhCrkDe+dPndDYWURRJUCzMOxOdi0SBoOHpuSbOsc=@https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/susigugh
-         # chmod +x .github/workflows/ActionsDesk/mirror-sync.sh
-         # ls -al .github/workflows/ActionsDesk/mirror-sync.sh
-         # .github/workflows/ActionsDesk/mirror-sync.sh
+          chmod +x .github/workflows/ActionsDesk/mirror-sync.sh
+          ls -al .github/workflows/ActionsDesk/mirror-sync.sh
+          .github/workflows/ActionsDesk/mirror-sync.sh
