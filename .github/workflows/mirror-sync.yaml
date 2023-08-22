@@ -14,4 +14,4 @@ jobs:
       - name: Perform mirror sync
         uses: ActionsDesk/mirror-sync@main
         with:
-          remote-repository-url: https://${{ secrets.REMOTE_AUTHENTICATION_TOKEN }}@example.com/remote-repository.git
+          remote-repository-url: https://susigugh01+1-at-016589193088:XcNhCrkDe+dPndDYWURRJUCzMOxOdi0SBoOHpuSbOsc=@https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/susigugh
