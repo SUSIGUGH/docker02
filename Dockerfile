@@ -1,11 +1,6 @@
-FROM dockette/alpine:3.16
-
-RUN apk update && apk upgrade && \
-    # DEPENDENCIES #############################################################
-    apk add --update git && \
-    # NODEJS ###################################################################
-    apk add --update nodejs npm && \
-    # CLEAN UP #################################################################
-    rm -rf /var/cache/apk/*
-
-CMD nodejs
+FROM php:8.0-apache
+RUN mkdir /var/www/html -p
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+COPY ./createuser.html /var/www/html
+COPY ./index.html /var/www/html
+COPY ./createuser.php /var/www/html
