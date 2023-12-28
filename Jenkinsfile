@@ -28,7 +28,7 @@ pipeline
 	{
 	steps
 	{
-	sh 'cd tf && terraform init && terraform apply -auto-approve && terraform destroy -auto-approve'
+	sh 'cd tf && terraform validate terraform apply -auto-approve && terraform destroy -auto-approve'
 	}
 	}
         
