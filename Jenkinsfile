@@ -22,8 +22,8 @@ pipeline
             steps
             {
                sh 'cd docker02 && docker build -t httpd .' 
-               sh 'docker stop httpd01'
-               sh 'docker rm httpd01'
+     //          sh 'docker stop httpd01'
+       //        sh 'docker rm httpd01'
                sh 'docker run -dit --name httpd01 -p80:80 httpd'
             }
         }
