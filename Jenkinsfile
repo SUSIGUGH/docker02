@@ -23,6 +23,14 @@ pipeline
                sh 'docker run -dit --name httpd01 -p80:80 httpd'
             }
         }
+
+	stage('AWS IaC with Terraform')
+	{
+	steps
+	{
+	sh 'cd tf && terraform init && terraform apply -auto-approve && terraform destroy -auto-approve'
+	}
+	}
         
         
     }
