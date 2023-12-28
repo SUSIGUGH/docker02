@@ -7,10 +7,6 @@ pipeline
         {
             steps
             {
-                echo "Welcome to Jenkins"
-                sh 'rm -Rf docker02'
-                sh 'touch a.txt'
-                sh 'git clone https://github.com/SUSIGUGH/docker02.git'
                 sh 'ls -ltr'
                 sh 'ls -ltr docker02'
                 sh 'echo "<h1> Welcome</h1>" > ./docker02/index.html'
