@@ -1,7 +1,7 @@
 # Define the VPC
-resource "aws_vpc" "susigugh" {
+resource "aws_vpc" "susivpc" {
   cidr_block = "10.0.0.0/16"
   tags = {
-    Name = "susigugh" 
+    Name = "susivpc" 
   }
-}
+  }
