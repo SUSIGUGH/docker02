@@ -7,5 +7,5 @@ resource "aws_instance" "httpd" {
  tags = {
     Name = "httpd"
   }
-  key_name = "ec2-git"
+  key_name = "websrv10"
 }
