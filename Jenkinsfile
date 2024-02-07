@@ -5,6 +5,7 @@ pipeline{
            stage('Build Docker Image'){
                 steps{
        sh 'ls -ltr'
+                    sh 'pwd'
                 }
             }
             
