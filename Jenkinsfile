@@ -16,7 +16,7 @@ pipeline{
 
           stage('Push Docker Image to Docker Hub'){
                 steps{
-                    sh 'docker login -u=susigugh -p=UniBall@2528 docker push susigugh/mysql01:v1'
+                    sh 'docker login -u=susigugh -p=UniBall@2528 && docker push susigugh/mysql01:v1'
 
                 }
             }
