@@ -1,6 +1,6 @@
 #Route Table
 resource "aws_route_table" "routetb01" {
-vpc_id              = aws_vpc.susivpc.id
+vpc_id              = aws_vpc.susivpc1.id
 }
 
 resource "aws_route" "route01" {

@@ -1,7 +1,7 @@
 # Define the security group
 resource "aws_security_group" "sg01" {
   name_prefix = "sg01_security_group"
-  vpc_id = aws_vpc.susivpc.id
+  vpc_id = aws_vpc.susivpc1.id
 
 ingress {
     from_port   = 22
