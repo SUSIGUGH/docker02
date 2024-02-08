@@ -22,6 +22,15 @@ pipeline{
             }
 
 
+       stage('AWS Terraform Implementation '){
+                steps{
+                    sh 'cd tf && terraform apply --auto-approve && terraform destroy --auto-approve'
+
+                }
+            }
+
+
+
         
     }
 }
