@@ -3,18 +3,18 @@ kind: ReplicaSet
 metadata:
   name: rep01susi
   labels:
-    app: mysqldb
+    app: phppr
   namespace: dev
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: mysqldb
+        app: phppr
     spec:
       containers:
-        - name: mysqldb
-          image: susigugh/mysql01:v1
+        - name: php
+          image: susigugh/phppr:v1
   selector:
     matchLabels:
-      app: mysqldb
+      app: phppr

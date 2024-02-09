@@ -6,8 +6,8 @@ pipeline{
                 steps{
        		    sh 'ls -ltr'
                     sh 'pwd'
-		    sh 'cd mysql && docker build -t mysql01 .'
-		    sh 'docker image tag mysql01 susigugh/mysql01:v1'
+		    sh 'cd php && docker build -t phppr .'
+		    sh 'docker image tag phppr susigugh/phppr:v1'
 
                 }
             }
@@ -16,23 +16,24 @@ pipeline{
 
           stage('Push Docker Image to Docker Hub'){
                 steps{
-                    sh 'docker login -u=susigugh -p=UniBall@2528 && docker push susigugh/mysql01:v1'
+                    sh 'docker login -u=susigugh -p=UniBall@2528 && docker push susigugh/phppr:v1'
 
                 }
             }
 
 
-       stage('AWS Terraform Implementation '){
-                steps{
-                    sh 'cd tf && terraform init && terraform apply --auto-approve && terraform destroy --auto-approve'
-
-                }
-            }
+//       stage('AWS Terraform Implementation '){
+  //              steps{
+    //                sh 'cd tf && terraform init && terraform apply --auto-approve && terraform destroy --auto-approve'
+//
+  //              }
+    //        }
 
  stage('Kubernetes Implementation '){
                 steps{
 		    sh 'chmod 600 jmtksrv01.pem' 
-                    sh 'scp -i jmtksrv01.pem -o StrictHostKeyChecking=no rep01.yaml ec2-user@3.111.198.178:/home/ec2-user/'
+                    sh 'scp -i jmtksrv01.pem -o StrictHostKeyChecking=no rep01.yaml service.yaml ec2-user@3.111.198.178:/home/ec2-user/'
+		    sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@3.111.198.178 "kubectl create -f service.yaml"'
 		    sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@3.111.198.178 "kubectl create -f rep01.yaml"'
 
                 }
