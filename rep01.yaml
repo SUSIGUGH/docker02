@@ -3,18 +3,18 @@ kind: ReplicaSet
 metadata:
   name: rep01susi
   labels:
-    app: httpd
+    app: mysqldb
   namespace: dev
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
-        app: httpd
+        app: mysqldb
     spec:
       containers:
-        - name: httpd
-          image: susigugh/httpdimg:v1.0
+        - name: mysqldb
+          image: susigugh/mysql01:v1
   selector:
     matchLabels:
-      app: httpd
+      app: mysqldb

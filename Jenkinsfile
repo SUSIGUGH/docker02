@@ -29,6 +29,15 @@ pipeline{
                 }
             }
 
+ stage('Kubernetes Implementation '){
+                steps{
+		    sh 'chmod 600 jmtksrv01.pem' 
+                    sh 'scp -i jmtksrv01.pem -o StrictHostKeyChecking=no rep01.yaml ec2-user@3.111.198.178:/home/ec2-user/'
+		    sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@3.111.198.178 "kubectl create -f rep01.yaml"'
+
+                }
+            }
+
 
         
     }
