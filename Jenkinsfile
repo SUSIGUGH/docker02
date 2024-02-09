@@ -33,6 +33,8 @@ pipeline{
                 steps{
 		    sh 'chmod 600 jmtksrv01.pem' 
                     sh 'scp -i jmtksrv01.pem -o StrictHostKeyChecking=no rep01.yaml service.yaml ec2-user@3.111.198.178:/home/ec2-user/'
+		    sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@3.111.198.178 "kubectl delete -f service.yaml"'
+		    sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@3.111.198.178 "kubectl delete -f rep01.yaml"'
 		    sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@3.111.198.178 "kubectl create -f service.yaml"'
 		    sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@3.111.198.178 "kubectl create -f rep01.yaml"'
 
