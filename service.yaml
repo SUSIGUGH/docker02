@@ -10,7 +10,7 @@ spec:
   - nodePort: 30880
     port: 80
     protocol: TCP
-    targetPort: 8080
+    targetPort: 80
   selector:
     app: phppr
   type: NodePort
