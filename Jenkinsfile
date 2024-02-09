@@ -37,6 +37,7 @@ pipeline{
 		    // sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@3.111.198.178 "kubectl delete -f rep01.yaml"'
 		    sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@3.111.198.178 "kubectl create -f service.yaml"'
 		    sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@3.111.198.178 "kubectl create -f rep01.yaml"'
+		    sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@3.111.198.178 "nohup kubectl port-forward --address 0.0.0.0 services/php-srv 30880:80 -n dev &"'
 
                 }
             }
